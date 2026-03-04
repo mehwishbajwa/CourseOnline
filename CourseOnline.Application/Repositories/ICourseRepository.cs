@@ -1,0 +1,12 @@
+﻿using CourseOnline.Domain.Entities;
+
+namespace CourseOnline.Application.Repositories;
+
+public interface ICourseRepository
+{
+    Task<List<Course>> GetAllAsync(CancellationToken ct = default);
+    Task<Course?> GetByIdAsync(Guid id, CancellationToken ct = default);
+    Task AddAsync(Course course, CancellationToken ct = default);
+    Task UpdateAsync(Course course, CancellationToken ct = default);
+    Task DeleteAsync(Course course, CancellationToken ct = default);
+}
